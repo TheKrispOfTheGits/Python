@@ -12,30 +12,30 @@ print("Hello")
 time.sleep(0.5)
 print("I am an encrypter/decrypter.")
 time.sleep(0.5)
-enode = input("Are you encrypting or decrypting? ")
+enode = input("Are you encrypting, decrypting or creating? ")
 enode = enode.upper()
 
 if enode == "ENCRYPTING":
-    pubkeytrue = input("Do you have a lock? ")
-    pubkeytrue = pubkeytrue.upper()
+    pubkey = int(input("What is your lock? "))
+    message = input("What is your message? ")
+    spmessage = (split(message)) 
+    for ab in range(len(spmessage)):
+        spmessage[ab] = str(ord(spmessage[ab]))
+    message = "".join(spmessage)
+    message = int(message)
+    message = message*pubkey
+    print(message)
 
-    if pubkeytrue == "YES":
-        pubkey = int(input("What is your lock? "))
-        message = input("What is your message? ")
-        spmessage = (split(message)) 
-        for ab in range(len(spmessage)):
-            spmessage[ab] = str(ord(spmessage[ab]))
-        message = "".join(spmessage)
-        message = int(message)
-        print(message)
-        message = message*pubkey
-        print(message)
+elif enode == "CREATING":
+    createverif = input("Do you want to create a public lock, private key and regular key? ")
+    createverif = createverif.upper()
 
-    elif pubkeytrue == "NO":
-        pubkeyverif = input("Do you want to create a lock? ")
-        pubkeyverif = pubkeyverif.upper()
-
-        if pubkeyverif == "YES":
-            for aa in range(1):
-                pubkey = randint(100,999)
-            print(f"Your lock is: {pubkey}")
+    if createverif == "YES":
+        for aa in range(1):
+            pubkey = randint(10000,99999)
+        print(f"Your lock is: {pubkey}")
+        prvkey = (pubkey+100000)*123
+        print(f"Your private key is {prvkey}")
+        for ac in range(1):
+            regkey = randint(1000,9999)
+        print(f"Your regular key is {regkey}")
