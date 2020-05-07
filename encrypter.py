@@ -3,8 +3,11 @@ import random
 from random import seed
 from random import randint
 
+def split(message): 
+    return [char for char in message]  
+
+global message
 seed(1)
-list = ["a", "b", "c", "d", "e", "f", "g"]
 print("Hello")
 time.sleep(0.5)
 print("I am an encrypter/decrypter.")
@@ -18,6 +21,12 @@ if enode == "ENCRYPTING":
 
     if pubkeytrue == "YES":
         pubkey = input("What is your lock? ")
+        message = input("What is your message? ")
+        spmessage = (split(message)) 
+        for ab in range(len(spmessage)):
+            spmessage[ab] = str(ord(spmessage[ab])*100)
+        message = "".join(spmessage)
+        print(message)
 
     elif pubkeytrue == "NO":
         pubkeyverif = input("Do you want to create a lock? ")
