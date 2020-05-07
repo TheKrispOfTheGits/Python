@@ -7,7 +7,4 @@ print("I am an encrypter/decrypter.")
 time.sleep(0.5)
 keytrue = input("Do you have a key?")
 if keytrue == "Yes":
-
-
-
-
+    print("Yes")
