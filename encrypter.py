@@ -20,12 +20,15 @@ if enode == "ENCRYPTING":
     pubkeytrue = pubkeytrue.upper()
 
     if pubkeytrue == "YES":
-        pubkey = input("What is your lock? ")
+        pubkey = int(input("What is your lock? "))
         message = input("What is your message? ")
         spmessage = (split(message)) 
         for ab in range(len(spmessage)):
-            spmessage[ab] = str(ord(spmessage[ab])*100)
+            spmessage[ab] = str(ord(spmessage[ab]))
         message = "".join(spmessage)
+        message = int(message)
+        print(message)
+        message = message*pubkey
         print(message)
 
     elif pubkeytrue == "NO":
