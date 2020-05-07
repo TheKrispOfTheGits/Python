@@ -26,6 +26,13 @@ if enode == "ENCRYPTING":
     message = message*pubkey
     print(message)
 
+elif enode == "DECRYPTING":
+    typekey = input("Are you decrypting regular key or private key messages.")
+    typekey = typekey.upper()
+
+    if typekey == "PRIVATE":
+        prvkey = int(input)
+
 elif enode == "CREATING":
     createverif = input("Do you want to create a public lock, private key and regular key? ")
     createverif = createverif.upper()
