@@ -4,6 +4,7 @@ from random import seed
 from random import randint
 
 seed(1)
+list = ["a", "b", "c", "d", "e", "f", "g"]
 print("Hello")
 time.sleep(0.5)
 print("I am an encrypter/decrypter.")
@@ -21,14 +22,8 @@ if enode == "ENCRYPTING":
     elif pubkeytrue == "NO":
         pubkeyverif = input("Do you want to create a lock? ")
         pubkeyverif = pubkeyverif.upper()
-        
+
         if pubkeyverif == "YES":
             for aa in range(1):
                 pubkey = randint(100,999)
             print(f"Your lock is: {pubkey}")
-                
-        
-        
-for aa in range(1):
-    value = randint(0,94)
-    print(value)
