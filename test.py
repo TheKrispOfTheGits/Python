@@ -1,5 +1,3 @@
-s = "The quick brown fox jumps over the lazy dog"
-for r in (("brown", "lazy"), ("lazy", "quick")):
-    s = s.replace(*r)
-
-print(s)
+q = "Do you like cafe? No, I prefer tea."
+q = q.multiple_replace('cafe':'tea', 'tea':'cafe', 'like':'prefer)
+print(q)
