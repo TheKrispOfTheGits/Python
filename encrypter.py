@@ -16,15 +16,17 @@ enode = input("Are you encrypting, decrypting or creating? ")
 enode = enode.upper()
 
 if enode == "ENCRYPTING":
-    pubkey = int(input("What is your lock? "))
     message = input("What is your message? ")
     spmessage = (split(message)) 
     for ab in range(len(spmessage)):
         spmessage[ab] = str(ord(spmessage[ab]))
     message = "".join(spmessage)
     message = int(message)
-    message = message*pubkey
-    print(message)
+    fileName = open("encryptpasswords.txt", "r")
+    if fileName.mode == 'r':
+        words = fileName.read()
+        message = message*2
+        print(message)
 
 elif enode == "DECRYPTING":
     typekey = input("Are you decrypting regular key or private key messages.")
@@ -34,15 +36,17 @@ elif enode == "DECRYPTING":
         prvkey = int(input)
 
 elif enode == "CREATING":
-    createverif = input("Do you want to create a public lock, private key and regular key? ")
-    createverif = createverif.upper()
+    for aa in range(1):
+        pubkey = randint(10000,99999)
+    prvkey = int((((((((((pubkey+100000)*123)+123)/123)+3)*123)-236)/123)-1)*123)
+    for ac in range(1):
+        regkey = randint(1000,9999)
+    print(pubkey)
+    print(prvkey)
+    print(regkey)
 
-    if createverif == "YES":
-        for aa in range(1):
-            pubkey = randint(10000,99999)
-        print(f"Your lock is: {pubkey}")
-        prvkey = (pubkey+100000)*123
-        print(f"Your private key is {prvkey}")
-        for ac in range(1):
-            regkey = randint(1000,9999)
-        print(f"Your regular key is {regkey}")
+    fileName = open("C:\Users\krisp\OneDrive - education.wa.edu.au\Year 8\Math\Coding\Project1\Python\passwords.txt", "w+")
+    fileName.write(str(pubkey))
+    fileName.write(str(prvkey))
+    fileName.write(str(regkey))
+    fileName.close()
